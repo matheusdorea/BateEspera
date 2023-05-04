@@ -23,9 +23,9 @@ posj = 2;
 for (var i = 0; i < mapa.length; i++) {
     for (var j = 0; j < mapa[i].length; j++) {
         if (i == posi && j == posj) {
-            document.getElementById("mapa").innerHTML += "&";
+            document.getElementById("mapa").innerHTML += " & ";
         } else  if (mapa[i][j] == " "){
-            document.getElementById("mapa").innerHTML += " _ ";
+            document.getElementById("mapa").innerHTML += "   ";
         } else {
             document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
         }
@@ -51,9 +51,9 @@ function baixo(params) {
     for (var i = 0; i < mapa.length; i++) {
         for (var j = 0; j < mapa[i].length; j++) {
             if (i == posi && j == posj) {
-                document.getElementById("mapa").innerHTML += "&";
+                document.getElementById("mapa").innerHTML += " & ";
             } else  if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += " _ ";
+                document.getElementById("mapa").innerHTML += "   ";
             } else {
                 document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
             }
@@ -80,9 +80,9 @@ function cima(params) {
     for (var i = 0; i < mapa.length; i++) {
         for (var j = 0; j < mapa[i].length; j++) {
             if (i == posi && j == posj) {
-                document.getElementById("mapa").innerHTML += "&";
+                document.getElementById("mapa").innerHTML += " & ";
             } else  if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += " _ ";
+                document.getElementById("mapa").innerHTML += "   ";
             } else {
                 document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
             }
@@ -109,9 +109,9 @@ function esquerda(params) {
     for (var i = 0; i < mapa.length; i++) {
         for (var j = 0; j < mapa[i].length; j++) {
             if (i == posi && j == posj) {
-                document.getElementById("mapa").innerHTML += "&";
+                document.getElementById("mapa").innerHTML += " & ";
             } else  if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += " _ ";
+                document.getElementById("mapa").innerHTML += "   ";
             } else {
                 document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
             }
@@ -138,9 +138,9 @@ function direita(params) {
     for (var i = 0; i < mapa.length; i++) {
         for (var j = 0; j < mapa[i].length; j++) {
             if (i == posi && j == posj) {
-                document.getElementById("mapa").innerHTML += "&";
+                document.getElementById("mapa").innerHTML += " & ";
             } else  if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += " _ ";
+                document.getElementById("mapa").innerHTML += "   ";
             } else {
                 document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
             }
@@ -168,15 +168,15 @@ function interagir(params) {
     for (var i = 0; i < mapa.length; i++) {
         for (var j = 0; j < mapa[i].length; j++) {
             if (i == posi && j == posj) {
-                document.getElementById("mapa").innerHTML += "&";
+                document.getElementById("mapa").innerHTML += " & ";
             } else  if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += " _ ";
+                document.getElementById("mapa").innerHTML += "   ";
             } else if (mapa[i][j] == "D") {
                 if (chave == true) {
                     mapa[i][j] = "=";
-                    document.getElementById("mapa").innerHTML += "=";
+                    document.getElementById("mapa").innerHTML += " = ";
                 } else {
-                    document.getElementById("mapa").innerHTML += "D";
+                    document.getElementById("mapa").innerHTML += " D ";
                 }
             } else {
                 document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
