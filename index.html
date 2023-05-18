@@ -4,19 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BateEspera</title>
+    <title>Fase 1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="text-align: center; font-size: xx-large;">
-    <h1>Bate & Espera</h1>
-    <hr>
-    <a href="game.html">
-        <input type="button" value="Iniciar" style="font-size: x-large;">
-    </a>
-    <br>
-    <br>
-    <input type="button" value="Tutorial" style="font-size: x-large;">
-    <br>
-    <br>
-    <input type="button" value="Sair" style="font-size: x-large;">
-</body>
+<body id="body" style="text-align: center; font-size: medium; color: whitesmoke; background-color: rgb(53, 46, 79); ">
+    <!--Tag de audio-->
+    <audio id="audio" volume="50" preload="auto" controls.play autoplay loop>
+    <source src="Legend Of Zelda Theme (8 Bit Remix Cover Version) [Tribute to NES] - 8 Bit Universe [TubeRipper.com].m4a" type="audio/mp3">
+    </audio>
+    <!--Tag do jogo-->
+    <div style="display: none;" id="game">
+        <label id="vida">Vida do Personagem: 3</label>
+        <pre id="mapa"></pre>
+    </div>
+    <!--Tag de seleção de personagen-->
+    <div style="display: none;" id="person">
+        <h1>Escolha a cor do seu personagem</h1>
+        <pre id="amostra" style="font-size: xx-large;">&</pre>
+        <br>
+        <select id="cor">
+            <option value="00A5E3">Azul</option>
+            <option value="FC6238">Laranja</option>
+            <option value="CFF800">Verde</option>
+            <option value="FF5768">Vermelho</option>
+        </select>
+        <br>
+        <input type="button" value="Confirmar" onclick="personalizar()">
+        <br>
+        <input type="button" value="Jogar" onclick="iniciar()">
+    </div>
+    <!--Tag de menu-->
+    <div style="display: contents;" id="menu">
+        <h1 style="color: chocolate;">The Legend of Casseb</h1>
+        <hr style="color: chocolate;">
+        <input onclick="personalizar()" type="button" value="Iniciar" style="font-size: x-large; color: whitesmoke; background-color: chocolate;">
+        <br>
+        <br>
+        <input onclick="tutorial()" type="button" value="Tutorial" style="font-size: x-large; color: whitesmoke; background-color: chocolate;">
+        <br>
+        <br>
+        <a href="https://youtu.be/dQw4w9WgXcQ">
+            <input type="button" value="Sair" style="font-size: x-large; color: whitesmoke; background-color: chocolate;">
+        </a>
+    </div>
+    <!--Tag de Tutorial-->
+    <div style="display: none;" id="tutorial">
+            <h1>Olá, caro jogador, em The Legend of Casseb, você irá enfrentar árduos desafios. <br>
+            Para fazê-lo, use as teclas WASD para movimentação e a tecla i para interagir com chaves! <br>
+            "@"= chaves <br>
+            "D"= Porta Fechada <br>
+            "="= Porta Aberta <br>
+            "*"= Parede <br>
+            "#"= Espinho <br>
+            "O"= Botão <br>
+            ">"= Teletransporte
+            </h1>
+            <br><br>
+            <button onclick="voltarTut()" style="color: rgb(224, 187, 145); background-color: chocolate;">Voltar >></button>
+    </div>
+    </body>
 </html>
+<script src="main.js"></script>
