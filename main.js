@@ -46,20 +46,6 @@ function baixo(params) {
     if ((posi < mapa.length - 1) && (nextPos != "*") && (nextPos != "D")) {
         posi++;
     }
-
-    //redesenhando mapa
-    for (var i = 0; i < mapa.length; i++) {
-        for (var j = 0; j < mapa[i].length; j++) {
-            if (i == posi && j == posj) {
-                document.getElementById("mapa").innerHTML += " & ";
-            } else  if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += "   ";
-            } else {
-                document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
-            }
-        }
-        document.getElementById("mapa").innerHTML += "<br>";
-    }
 }
 
 //movendo para cima
@@ -74,20 +60,6 @@ function cima(params) {
     //incrementando variável de posição
     if ((posi > 0) && (nextPos != "*") && (nextPos != "D")) {
         posi--;
-    }
-
-    //redesenhando mapa
-    for (var i = 0; i < mapa.length; i++) {
-        for (var j = 0; j < mapa[i].length; j++) {
-            if (i == posi && j == posj) {
-                document.getElementById("mapa").innerHTML += " & ";
-            } else  if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += "   ";
-            } else {
-                document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
-            }
-        }
-        document.getElementById("mapa").innerHTML += "<br>";
     }
 }
 
@@ -104,20 +76,6 @@ function esquerda(params) {
     if ((posj > 0) && (nextPos != "*") && (nextPos != "D")) {
         posj--;
     }
-
-    //redesenhando mapa
-    for (var i = 0; i < mapa.length; i++) {
-        for (var j = 0; j < mapa[i].length; j++) {
-            if (i == posi && j == posj) {
-                document.getElementById("mapa").innerHTML += " & ";
-            } else  if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += "   ";
-            } else {
-                document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
-            }
-        }
-        document.getElementById("mapa").innerHTML += "<br>";
-    }
 }
 
 //movendo para a direita
@@ -132,20 +90,6 @@ function direita(params) {
     //incrementando variável de posição
     if ((posj < mapa[posi].length - 1) && (nextPos != "*") && (nextPos != "D")) {
         posj++;
-    }
-
-    //redesenhando mapa
-    for (var i = 0; i < mapa.length; i++) {
-        for (var j = 0; j < mapa[i].length; j++) {
-            if (i == posi && j == posj) {
-                document.getElementById("mapa").innerHTML += " & ";
-            } else  if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += "   ";
-            } else {
-                document.getElementById("mapa").innerHTML += ` ${mapa[i][j]} `;
-            }
-        }
-        document.getElementById("mapa").innerHTML += "<br>";
     }
 }
 
