@@ -115,9 +115,6 @@ function menu(params) {
 
 //movendo para baixo
 function baixo(params) {
-    //limpando mapa
-    document.getElementById("mapa").innerHTML = "";
-
     //var de proxima posição
     var nextPos;
     nextPos = mapa[posi + 1][posj];
@@ -133,9 +130,6 @@ function baixo(params) {
 
 //movendo para cima
 function cima(params) {
-    //limpando o mapa
-    document.getElementById("mapa").innerHTML = "";
-
     //var de proxima posição
     var nextPos;
     nextPos = mapa[posi - 1][posj];
@@ -151,9 +145,6 @@ function cima(params) {
 
 //movendo para a esquerda
 function esquerda(params) {
-    //limpando mapa
-    document.getElementById("mapa").innerHTML = "";
-
     //var de proxima posição
     var nextPos;
     nextPos = mapa[posi][posj - 1];
@@ -169,9 +160,6 @@ function esquerda(params) {
 
 //movendo para a direita
 function direita(params) {
-    //limpando mapa
-    document.getElementById("mapa").innerHTML = "";
-
     //var de proxima posição
     var nextPos;
     nextPos = mapa[posi][posj + 1];
@@ -185,14 +173,7 @@ function direita(params) {
     }
 }
 
-//funçao de interação
-//variávle de controle de botão
-var botao;
-botao = false;
-
 function interagir(params) {
-    //limpando mapa
-    document.getElementById("mapa").innerHTML = "";
 
     //variavel de controle de chave
     var chave;
@@ -209,13 +190,6 @@ function interagir(params) {
             refresh();
         }
     }
-    if(mapa[posi][posj] == "O") {
-        if (botao) {
-            botao = false;
-        } else {
-            botao = true;
-        }
-    }
 
     //redesenhando mapa
     for (var i = 0; i < mapa.length; i++) {
@@ -225,15 +199,7 @@ function interagir(params) {
                     mapa[i][j] = "=";
                 }
             }
-            if (botao) {
-                if (levelAtual == 2) {
-                    if (mapa[i][j] == "#"){
-                        mapa[i][j] = "_";
-                    } else if (mapa[i][j] == "_"){
-                        mapa[i][j] = "#";
-                    }
-                }
-            } else {
+            if (mapa[posi][posj] == "O") {
                 if (levelAtual == 2) {
                     if (mapa[i][j] == "#"){
                         mapa[i][j] = "_";
@@ -275,16 +241,8 @@ function render() {
         for (var j = 0; j < mapa[i].length; j++) {
             if (i == posi && j == posj) {
                 document.getElementById("mapa").innerHTML += `<font color='#${cor}'>& </font>`;
-            } else if (mapa[i][j] == " "){
-                document.getElementById("mapa").innerHTML += "  ";
-            } else if (mapa[i][j] == "@"){
-                document.getElementById("mapa").innerHTML += `<font color="yellow">@ </font>`;
-            } else if (mapa[i][j] == "=") {
-                document.getElementById("mapa").innerHTML += `<font color="whitesmoke">= </font>`;
-            } else if (mapa[i][j] == "#") {
-                document.getElementById("mapa").innerHTML += `<font color="silver"># </font>`
             } else {
-                document.getElementById("mapa").innerHTML += `<font color="black">${mapa[i][j]} </font>`;
+                document.getElementById("mapa").innerHTML += `${mapa[i][j]} `;
             }
         }
     document.getElementById("mapa").innerHTML += "<br>";
