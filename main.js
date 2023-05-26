@@ -194,6 +194,7 @@ function voltarTut(params) {
 function menu(params) {
     document.getElementById("gameover").style.display = "none";
     document.getElementById("menu").style.display = "contents";
+    document.getElementById("win").style.display = "none";
 }
 
 //movendo para baixo
@@ -448,6 +449,9 @@ function refresh(params) {
         mapa = mapa3;
 
         render();
+    } else if (levelAtual == 4) {
+        document.getElementById("game").style.display = "none";
+        document.getElementById("win").style.display = "contents";
     }
 }
 
